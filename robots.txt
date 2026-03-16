@@ -1,0 +1,9 @@
+# robots.txt for stratusg.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://stratusg.com/sitemap.xml
+
+# Crawl-delay (optional, be polite)
+Crawl-delay: 1

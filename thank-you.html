@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — StratusG Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <a href="./index.html" class="header__logo">
+      <img src="./assets/stratusG-2.svg" alt="StratusG Consulting" class="header__logo-full">
+    </a>
+    <nav class="header__nav">
+      <a href="./index.html#home">Home</a>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#services">Services</a>
+      <a href="./index.html#biotechforce">BioTechForce</a>
+      <a href="./index.html#clients">Clients</a>
+      <a href="./index.html#whitepapers">Whitepapers</a>
+      <a href="./index.html#press">Press</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="header__phone" data-phone></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="thank-you-hero">
+    <div class="container" style="text-align:center; padding: 6rem 1rem 8rem;">
+      <div class="thank-you-icon" style="display:flex; justify-content:center;">
+        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--color-success, #139C49);">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <h1 style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-text); margin-top: 1.5rem;">Thank You!</h1>
+      <p style="font-size: var(--text-lg); color: var(--color-text-muted); max-width: 520px; margin: 1rem auto 2.5rem; line-height: 1.6;">
+        Your submission has been received. A member of our team will be in touch with you shortly.
+      </p>
+      <a href="./index.html#home" class="btn btn--primary btn--lg">Return to Homepage</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom" style="border-top:none; padding-top:0;">
+      <span class="footer__copyright">&copy; 2026 StratusG Consulting. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var p = ['8','5','5','.','8','7','8','.','2','6','0','0'];
+  var n = p.join('');
+  var t = 'tel:' + n.replace(/\./g, '');
+  document.querySelectorAll('[data-phone]').forEach(function(el) {
+    el.href = t;
+    el.textContent = n;
+  });
+})();
+</script>
+</body>
+</html>
