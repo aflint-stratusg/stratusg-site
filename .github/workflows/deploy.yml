@@ -1,0 +1,24 @@
+name: Deploy to Site Ground
+
+on:
+  push:
+    branches:
+      - main  # Change to "master" if that's your default branch
+    workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./        # Deploys from repo root
+          server-dir: /stratusg.com/public_html/
