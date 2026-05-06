@@ -1,2 +1,3 @@
 RewriteEngine On
 RewriteRule ^biotechforce/?$ /#biotechforce [R=301,NE,L]
+RewriteRule ^privacy-policy/?$ /privacy-policy.html [L]
