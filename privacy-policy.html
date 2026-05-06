@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — StratusG Consulting</title>
+<meta name="description" content="StratusG Consulting Privacy Policy: how we collect, use, and share personal information.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://stratusg.com/privacy-policy">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="./index.html" class="header__logo">
+      <img src="./assets/stratusG-2.svg" alt="StratusG Consulting" class="header__logo-full">
+    </a>
+    <nav class="header__nav">
+      <a href="./index.html#home">Home</a>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#services">Services</a>
+      <a href="./index.html#biotechforce">BioTechForce</a>
+      <a href="./index.html#clients">Clients</a>
+      <a href="./index.html#whitepapers">Whitepapers</a>
+      <a href="./index.html#press">Press</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="header__phone" data-phone></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="page active">
+    <section class="service-detail__hero">
+      <div class="container">
+        <a href="./index.html#home" class="back-link">← Back to Home</a>
+        <h1>StratusG Privacy Policy</h1>
+        <p>Last Updated: May 2026</p>
+      </div>
+    </section>
+
+    <section class="service-detail__body">
+      <div class="container container--narrow">
+        <p>StratusG ("we") collects and uses personal information to provide services, respond to inquiries, and improve our marketing and website performance.</p>
+
+        <h2>Information We Collect</h2>
+        <ul>
+          <li>Name, email, company, job title, and any details you submit</li>
+          <li>Basic analytics (IP address, device, pages viewed)</li>
+          <li>Information you share through LinkedIn Lead Gen Forms</li>
+        </ul>
+
+        <h2>How We Use Information</h2>
+        <ul>
+          <li>Respond to requests and provide services</li>
+          <li>Send updates or marketing (you may opt out anytime)</li>
+          <li>Improve our website and campaigns</li>
+          <li>Comply with legal requirements</li>
+        </ul>
+        <p>We do not sell personal information.</p>
+
+        <h2>Sharing</h2>
+        <p>We may share data with service providers (CRM, email tools, analytics) and advertising platforms like LinkedIn. We do not share data for others' marketing.</p>
+
+        <h2>Your Choices</h2>
+        <p>You may request access, correction, deletion, or opt out of communications by contacting us at <a href="mailto:privacy@stratusg.com">privacy@stratusg.com</a>.</p>
+
+        <h2>Security</h2>
+        <p>We use reasonable safeguards but cannot guarantee absolute security.</p>
+
+        <h2>Contact</h2>
+        <p>StratusG — <a href="mailto:privacy@stratusg.com">privacy@stratusg.com</a></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom">
+      <span class="footer__copyright">&copy; 2026 StratusG Consulting. All rights reserved.</span>
+      <ul class="footer__links" style="display:flex;gap:1.5rem;list-style:none;padding:0;margin:0;">
+        <li><a href="./index.html#contact">Contact</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var p = ['8','5','5','.','8','7','8','.','2','6','0','0'];
+  var n = p.join('');
+  var t = 'tel:' + n.replace(/\./g, '');
+  document.querySelectorAll('[data-phone]').forEach(function(el) {
+    el.href = t;
+    el.textContent = n;
+  });
+})();
+</script>
+</body>
+</html>
