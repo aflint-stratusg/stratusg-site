@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Part 11 E-Signatures in Salesforce: What Auditors Actually Ask For | StratusG Consulting</title>
+<meta name="description" content="The six questions auditors ask about 21 CFR Part 11 electronic signatures in Salesforce, including audit trail retention and re-authentication at signing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://stratusg.com/part-11-esignatures-salesforce.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Part 11 E-Signatures in Salesforce: What Auditors Actually Ask For">
+<meta property="og:description" content="The six questions auditors ask about 21 CFR Part 11 electronic signatures in Salesforce, and what a good answer looks like.">
+<meta property="og:url" content="https://stratusg.com/part-11-esignatures-salesforce.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Part 11 E-Signatures in Salesforce: What Auditors Actually Ask For",
+  "datePublished": "2026-10-23",
+  "author": { "@type": "Organization", "name": "StratusG Consulting" },
+  "publisher": { "@type": "Organization", "name": "StratusG Consulting" },
+  "mainEntityOfPage": "https://stratusg.com/part-11-esignatures-salesforce.html"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+<!-- Apollo website tracker -->
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"66bcf4831e5bf001b2159219"})},
+document.head.appendChild(o)}initApollo();</script>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="./index.html" class="header__logo">
+      <img src="./assets/stratusG-2.svg" alt="StratusG Consulting" class="header__logo-full">
+    </a>
+    <nav class="header__nav">
+      <a href="./index.html#home">Home</a>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#services">Services</a>
+      <a href="./index.html#biotechforce">BioTechForce</a>
+      <a href="./index.html#clients">Clients</a>
+      <a href="./index.html#whitepapers">Whitepapers</a>
+      <a href="./index.html#press">Press</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="header__phone" data-phone></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="page active">
+    <section class="service-detail__hero">
+      <div class="container">
+        <a href="./index.html#home" class="back-link">&larr; Back to Home</a>
+        <h1>Part 11 E-Signatures in Salesforce: What Auditors Actually Ask For</h1>
+        <p>October 2026</p>
+      </div>
+    </section>
+
+    <section class="service-detail__body">
+      <div class="container container--narrow">
+        <p>Salesforce is not "Part 11 compliant" out of the box, and neither is any other platform. 21 CFR Part 11 governs how you use a system, so the configuration, procedures and validation evidence are yours to provide. We have set up Part 11 electronic signatures in Salesforce many times, and auditors tend to ask the same six questions.</p>
+        <h2>1. Who signed, when, and why?</h2>
+        <p>A signed record must show the signer's name, the date and time, and the meaning of the signature, such as Reviewed or Approved. Auditors want to see this on the record itself, not just in a log.</p>
+        <h2>2. Is the signature tied to the record?</h2>
+        <p>A signature cannot be moved or copied to another record. Show how the record locks after signing, and what happens if someone edits it later: the signature is invalidated or superseded, and the change is logged.</p>
+        <h2>3. Is each signature unique, and re-authenticated at signing?</h2>
+        <p>No shared accounts and no reused credentials. Explain how the signer proves their identity at the moment of signature, not just at login.</p>
+        <h2>4. Do you have an audit trail?</h2>
+        <p>Teams often mix up two layers. Record history shows who changed data and when, and Salesforce Shield's Field Audit Trail extends how long it is kept. The Setup Audit Trail logs changes to the system itself, but it keeps only 180 days. An on-demand export cannot show a change from nine months ago unless you saved a copy earlier.</p>
+        <p>There are four common ways to keep the configuration history:</p>
+        <ul>
+          <li>A daily copy into a read-only custom object, with triggers that block edits and deletes.</li>
+          <li>A copy in immutable storage outside Salesforce, which is the strongest answer to "who can alter your audit copy?"</li>
+          <li>A backup or archive product that keeps history outside the org.</li>
+          <li>Change control records that show every deployment, paired with a rule against direct production edits.</li>
+        </ul>
+        <p>Be clear in your documentation about what each one guarantees. A custom object protected by triggers is tamper-resistant, not immutable, and Salesforce does not log every setup change.</p>
+        <h2>5. Can you prove it works?</h2>
+        <p>This is the validation package: requirements, risk assessment, test scripts and results, and traceability between them. Auditors look for evidence that testing matched the risk, including negative tests such as trying to edit a signed record and confirming it fails.</p>
+        <h2>6. Who is allowed to sign?</h2>
+        <p>Show which permission sets grant signing, how often access is reviewed, and what happens when someone leaves.</p>
+        <h2>From the field</h2>
+        <p>A mid-size biotech's QA team needed batch record approvals signed in Salesforce. The auditor's first question was how re-authentication at signing is enforced.</p>
+        <p>We built a Lightning Web Component that re-prompts the signer for credentials, verified by Apex through a connected app. On success it records the signer's name, timestamp and meaning on a signature record and locks the batch. Users with Modify All Data could still edit signed batches, so we added an Apex trigger and removed that permission from the signing profile.</p>
+        <p>For the audit we kept a requirements traceability matrix, test scripts for sign, reject and edit-after-sign, and the permission set review.</p>
+        <h2>Before your next audit</h2>
+        <ul>
+          <li>Map each Part 11 requirement to the Salesforce feature and the evidence behind it.</li>
+          <li>Decide how you keep the Setup Audit Trail beyond 180 days, and write it down.</li>
+          <li>Retest signatures after major Salesforce releases.</li>
+          <li>Review signing permissions on a schedule.</li>
+        </ul>
+        <p><em>This post is general guidance, not legal or regulatory advice. Have your QA and regulatory teams review any approach before relying on it.</em></p>
+
+        <a href="./index.html#contact" class="btn btn--primary" style="margin-top:var(--space-6)">Planning Part 11 signatures in Salesforce? Talk to us</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom">
+      <span class="footer__copyright">&copy; 2026 StratusG Consulting. All rights reserved.</span>
+      <ul class="footer__links" style="display:flex;gap:1.5rem;list-style:none;padding:0;margin:0;">
+        <li><a href="./index.html#contact">Contact</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var p = ['8','5','5','.','8','7','8','.','2','6','0','0'];
+  var n = p.join('');
+  var t = 'tel:' + n.replace(/\./g, '');
+  document.querySelectorAll('[data-phone]').forEach(function(el) {
+    el.href = t;
+    el.textContent = n;
+  });
+})();
+</script>
+</body>
+</html>
